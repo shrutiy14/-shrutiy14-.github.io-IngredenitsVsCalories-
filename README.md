@@ -1,2 +1,2 @@
-# Number of Ingredients versus Calories of Recipes
+# Relationship between Number of Ingredients and Calories of Recipes
 project dsc80

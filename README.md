@@ -1,2 +1,2 @@
 # Relationship between Number of Ingredients and Calories of Recipes
-project dsc80
+Authors: Shruti Yamala and Arshia Vadhani

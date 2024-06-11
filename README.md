@@ -12,7 +12,7 @@ For this project, we utilized the Recipes and Ratings Data Frame. We found that 
 We began to clean our data by merging the two data frames we were originally given, recipes and interactions. With this merge on recipe_id, we were able to create one large recipes_and_ratings data frame that contained the contents of the recipe, the minutes taken to make it, the number of steps, the nutrition information, the number of ingredients, etc. Not knowing what direction we wanted to go in, we created extra columns that we believed could give us some insight into the relationship between the recipe and its contents. The columns in particular that were most helpful were "Calories": this column extracted the number of calories from the nutrition information columns, "Average Rating": this column helped us find the average rating per recipe as given by people who have made them or (the user_ID) (KEEP WORKING HERE, EXPLAIN WHAT OTHER STEPS AND HOW IT AFFECTED OUR ANALYSIS)
 
 ### Cleaned Data Frame
-<table border="1" class="dataframe" style= "width: 25%; font-size: 10pt; margin: auto; border-collapse: collapse;">
+<table border="1" class="dataframe" style= "width: 100%; font-size: 10pt; margin: auto; border-collapse: collapse;">
   <thead>
     <tr style="text-align: right;">
       <th></th>

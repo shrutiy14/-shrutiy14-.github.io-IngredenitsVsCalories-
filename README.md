@@ -32,3 +32,9 @@ We began to clean our data by merging the two data frames we were originally giv
 
 
 ## Bivariate Analysis
+<iframe
+  src="assets/bivariate1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>

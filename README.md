@@ -77,3 +77,9 @@ We began to clean our data by merging the two data frames we were originally giv
 |              32 |                864.475 |        3457.9         |                 363.1 |                1031.6 |
 |              33 |                338.2   |         338.2         |                 338.2 |                 338.2 |
 |              37 |              10687.7   |       10687.7         |               10687.7 |               10687.7 |
+
+
+# Assessment of Missingness
+
+## NMAR Analysis
+## Missingness Dependency

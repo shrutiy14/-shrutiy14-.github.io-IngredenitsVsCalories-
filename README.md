@@ -10,7 +10,8 @@ For this project, we utilized the Recipes and Ratings Data Frame. We found that 
 <img width="908" alt="Screen Shot 2024-06-11 at 4 43 04 PM" src="https://github.com/shrutiy14/-shrutiy14-.github.io-RecipeProject-/assets/129795184/9addc141-e1c7-4c83-8299-b61a7b0d99cd">
 
 # Data Cleaning and Exploratory Data Analysis
-We began to clean our data by merging the two data frames we were originally given, recipes and interactions. With this merge on recipe_id, we were able to create one large recipes_and_ratings data frame that contained the contents of the recipe, the minutes taken to make it, the number of steps, the nutrition information, the number of ingredients, etc. Not knowing what direction we wanted to go in, we created extra columns that we believed could give us some insight into the relationship between the recipe and its contents. The columns in particular that were most helpful were "Calories": this column extracted the number of calories from the nutrition information columns, "Average Rating": this column helped us find the average rating per recipe as given by people who have made them or (the user_ID) (KEEP WORKING HERE, EXPLAIN WHAT OTHER STEPS AND HOW IT AFFECTED OUR ANALYSIS)
+
+We began to clean our data by merging the two data frames we were originally given, recipes and interactions. With this merge on recipe_id, we were able to create one large recipes_and_ratings data frame that contained the contents of the recipe, the minutes taken to make it, the number of steps, the nutrition information, the number of ingredients, etc. Not knowing what direction we wanted to go in, we created extra columns that we believed could give us some insight into the relationship between the recipe and its contents. The added columns in particular that were most helpful were "Calories": this column extracted the number of calories from the nutrition information columns, "Average Rating": this column helped us find the average rating per recipe as given by people who have made them or (the user_ID).
 
 ## Cleaned Data Frame
 
@@ -23,6 +24,8 @@ We began to clean our data by merging the two data frames we were originally giv
 | 412 broccoli casserole | 40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli'] | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0] | 6 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions'] | 9 | 768828.0 | 306168.0 | 2013-08-02 | 5.0 | 5.0 | 194.8 | [20.0, 6.0, 32.0, 22.0, 36.0, 3.0] | 20.0 | 6.0 | 32.0 | 22.0 | 36.0 | 3.0 | True |
 
 ## Univariate Analysis
+
+For our univariate analysis, we looked into the distribution of calories amongst recipes within our data frame. The present trend is that a large majority of all recipes lie within the 0-2500 calorie range.
 <iframe
   src="assets/univariate1.html"
   width="800"
@@ -32,6 +35,9 @@ We began to clean our data by merging the two data frames we were originally giv
 
 
 ## Bivariate Analysis
+
+For our bivariate analysis, we explored the relationship between the proportion of all calories in each subgroup, high-numbered ingredient recipes (7+), and low-numbered ingredient analysis (<7). We found that recipes labeled high-ingredient contain a higher proportion of the overall calories as compared to recipes that are low-ingredient.
+
 <iframe
   src="assets/bivariate1.html"
   width="800"
@@ -83,3 +89,35 @@ We began to clean our data by merging the two data frames we were originally giv
 
 ## NMAR Analysis
 ## Missingness Dependency
+
+### Missingness of Rating on Cooking Time
+
+<iframe
+  src="assets/missing1a.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/missing1b.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+### Missingness of Rating on Number of Ingredients
+
+<iframe
+  src="assets/missing2a.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/missing2b.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>

@@ -6,6 +6,7 @@ We are analyzing the relationship between the number of ingredients of a given r
 
 # Introduction
 For this project, we utilized the Recipes and Ratings Data Frame. We found that it would be easiest to draw practical conclusions from this data frame and that our deliverable could aid in making everyday decisions. Especially during the summertime, when people find more free time to cook and experiment with more things, the findings of our project will give them the tools and insight to help them choose the right recipes to replicate. Our project is centered around using other factors to predict the number of calories that a recipe will output. Our data frame contains 234,429 rows and below you will find the most relevant columns we worked with.
+
 <img width="896" alt="Screen Shot 2024-06-10 at 5 20 40 PM" src="https://github.com/shrutiy14/-shrutiy14-.github.io-RecipeProject-/assets/129795184/adf180f6-bc5d-4be0-8e7c-15090b52f68e">
 <img width="908" alt="Screen Shot 2024-06-11 at 4 43 04 PM" src="https://github.com/shrutiy14/-shrutiy14-.github.io-RecipeProject-/assets/129795184/9addc141-e1c7-4c83-8299-b61a7b0d99cd">
 
@@ -103,9 +104,20 @@ We wanted to further understand rhe relationship between number of ingredients a
 # Assessment of Missingness
 
 ## NMAR Analysis
+
+Review, rating, and description were three columns of the merged dataframe that had missing values. We believe that the missingness of the "review" column is NMAR because the missingness likely depends on the column itself; considering factors like user satisfaction (strong vs not strong opinions of the recipes), user engagement with the review platform (if they are someone who often leave reviews vs not), and even technical difficulties or time restrictions could have prevented the users from leaving a review.
+
 ## Missingness Dependency
 
+To analyze if the missingness of the "rating" column was MAR on some other column of the dataframe, we proceeded to conduct a few hypothesis tests, both with a significance level of 0.05 and test statistic of the absolute difference in means.
+
 ### Missingness of Rating on Cooking Time
+
+Null Hypothesis: The missingness of the "rating" column does not depend on cooking time (minutes).
+
+Alternative Hypothesis: The missingness of the "rating" column does depend on cooking time (minutes).
+
+Running a permutation test 500 repetitions, we achieved a p-value of 0.134, which is higher than our significance level; we fail to reject the null. So, the missingness of the "rating" column likely does not depend on the cooking time of the recipe. 
 
 <iframe
   src="assets/missing1a.html"
@@ -121,10 +133,18 @@ We wanted to further understand rhe relationship between number of ingredients a
   frameborder="0"
 ></iframe>
 
+So, what other columns could the missingness of "rating" potentially depend on?
+
 ### Missingness of Rating on Number of Ingredients
 
+Null Hypothesis: The missingness of the "rating" column does not depend on number of ingredients.
+
+Alternative Hypothesis: The missingness of the "rating" column does depend on number of ingredients.
+
+Running a permutation test 500 repetitions, we achieved a p-value of 0.0, which is lower than our significance level; we reject the null in favor of the alternative hypothesis. So, the missingness of the "rating" column likely does  depend on the number of ingredients in the recipe. Note the significant distance the observed test statistic is from the empirical distribution: it is understandable why the p-value was 0.0.
+
 <iframe
-  src="assets/missing2a.html"
+  src="assets/missingAgain.html"
   width="800"
   height="600"
   frameborder="0"

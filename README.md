@@ -121,3 +121,41 @@ For our bivariate analysis, we explored the relationship between the proportion 
   height="600"
   frameborder="0"
 ></iframe>
+
+# Hypothesis Testing
+
+For our hypothesis test, we formed our null hypothesis as
+
+Null: Recipes with 7 or more ingredients will have the same calorie counts as those under 7.
+
+Alternative: Recipes with 7 or more ingredients will have a greater calorie count as those with under 7. 
+
+The simulation we used was a permutation test and this was because we wanted to compare if our two distributions appeared to come from the same population. We hypothesized that recipes with more ingredients would contains a larger number of calories simply due to the increase in volume of what went into the recipe. We set our significance level to 0.05 and chose difference in group means as our test statistic. The significance level of 0.05 is standard and difference in group means made it easy to interpret the overall difference in between the distribution of our two numerical variables. We ran the permutation test by creating two separate categories for each group called “high_ing” where recipes were given a True or False based on the “n_ingredient” column. We then shuffled “high_ing” 500 times. The result of our hypothesis test was an observed difference of 119.29092982758556 and a p-value of 0.0 which is less than our threshold meaning we reject the null hypothesis. This would make some sense as we can see a trend implied between recipes deemed “high-ingredient” and a larger proportion of the calories within our bivariate distribution. 
+
+<iframe
+  src="assets/hypothesis_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+# Framing a Prediction Problem
+
+Our goal for our prediction problem was to utilize the columns in the data frame to be able to predict the number of calories an ingredient would have given the other information(the presence of high-calorie ingredients, cuisine, other nutrition information, etc.). We chose to build a regression model with there response variable being the number of calories. We chose this response variable as it is necessary information  that most people tend to take into consideration when choosing a recipe. Our metric for evaluating our model was the RMSE because of the error magniitude sensitivity. RMSE punishes larger deviations to the true calorie at disproportionaltely larger rate. This is good as the aim for our prediction model is to get as accurate of a prediction as possible especially when tracking nutrients and macros of meals. Further RMSE, has an easy interpretability allows us to compare the magnitude of the error in the same units as the predicted variables, so if our RMSE is 50, our predictions for calories are off by an average of 50 calories. 
+
+# Baseline Model
+
+# Final Model
+
+# Fairness Analysis
+
+Our fairness analysis consisted of:
+
+Null: Our model was fair and prediction accuracy was the same for both groups, recipes with 7 or more ingredients and recipes with less than 7 ingredients. There was no significant difference between the RMSE’s for either group
+
+Alternative: Our models prediction accuracy was unfair and its prediction accuracy for recipes with 7 or more ingredients was higher than recipes with less than 7 ingredients. 
+The evaluation metric for models accuracy was the RMSE.
+
+Our p-value threshold was again 0.05 for alpha. 
+Our test statistic was difference in RMSE and we chose this because it would be easiest to directly compare how the model performed with more ingredients versus with less ingredients. It was a more straightforward comparison in prediction accuracy and we could draw a more concrete conclusion if we were able to see how well the model perfomed across both groups.
+As a final result, our observed difference between the group was about 40 calories and the p-value was 0.31, which was above the threshold of 0.05 and therefore we can fail to reject the null hypothesis, indicating that our model is pretty fair and draws constant conclusions across both groups no matter if recipes are categorized as high ingredient or low ingredient recipes. ”

@@ -132,12 +132,8 @@ Alternative: Recipes with 7 or more ingredients will have a greater calorie coun
 
 The simulation we used was a permutation test and this was because we wanted to compare if our two distributions appeared to come from the same population. We hypothesized that recipes with more ingredients would contains a larger number of calories simply due to the increase in volume of what went into the recipe. We set our significance level to 0.05 and chose difference in group means as our test statistic. The significance level of 0.05 is standard and difference in group means made it easy to interpret the overall difference in between the distribution of our two numerical variables. We ran the permutation test by creating two separate categories for each group called “high_ing” where recipes were given a True or False based on the “n_ingredient” column. We then shuffled “high_ing” 500 times. The result of our hypothesis test was an observed difference of 119.29092982758556 and a p-value of 0.0 which is less than our threshold meaning we reject the null hypothesis. This would make some sense as we can see a trend implied between recipes deemed “high-ingredient” and a larger proportion of the calories within our bivariate distribution. 
 
-<iframe
-  src="assets/hypothesis_test.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+<img width="908" alt="Screen Shot 2024-06-12 at 1 04 41 AM" src="https://github.com/shrutiy14/-shrutiy14-.github.io-RecipeProject-/assets/129795184/73f42952-9c0d-47d3-827d-056316c6a4a8">
+
 
 # Framing a Prediction Problem
 

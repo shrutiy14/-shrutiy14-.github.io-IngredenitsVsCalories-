@@ -22,7 +22,12 @@ We began to clean our data by merging the two data frames we were originally giv
 | 412 broccoli casserole | 40 | 50969 | 2008-05-30 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli'] | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0] | 6 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions'] | 9 | 768828.0 | 306168.0 | 2013-08-02 | 5.0 | 5.0 | 485 | 194.8 | [20.0, 6.0, 32.0, 22.0, 36.0, 3.0] | 20.0 | 6.0 | 32.0 | 22.0 | 36.0 | 3.0 | True |
 
 ## Univariate Analysis
-
+<iframe
+  src="assets/univariate1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 ## Bivariate Analysis

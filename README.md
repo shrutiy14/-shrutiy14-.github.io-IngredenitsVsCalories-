@@ -11,7 +11,19 @@ For this project, we utilized the Recipes and Ratings Data Frame. We found that 
 
 # Data Cleaning and Exploratory Data Analysis
 
-We began to clean our data by merging the two data frames we were originally given, recipes and interactions. With this merge on recipe_id, we were able to create one large recipes_and_ratings data frame that contained the contents of the recipe, the minutes taken to make it, the number of steps, the nutrition information, the number of ingredients, etc. Not knowing what direction we wanted to go in, we created extra columns that we believed could give us some insight into the relationship between the recipe and its contents. The added columns in particular that were most helpful were "Calories": this column extracted the number of calories from the nutrition information columns, "Average Rating": this column helped us find the average rating per recipe as given by people who have made them or (the user_ID).
+We began to clean our data by merging the two data frames we were originally given, recipes and interactions. 
+
+1. Left merge the recipes and interactions datasets together. With this merge on recipe_id, we were able to create one large recipes_and_ratings data frame that contained the contents of the recipe, the minutes taken to make it, the number of steps, the nutrition information, the number of ingredients, etc. 
+
+2. In the merged dataset, fill all ratings of 0 with np.nan. We believe this is because most rating systems range from 1-5, so a rating of 0 may not accurately reflect a user's true opinion of a certain recipe, so an input of 0 could be a data quality issue.
+
+3. Find the average rating per recipe, as a Series.
+
+4. Add this Series containing the average rating per recipe back to the recipes dataset
+
+Not knowing what direction we wanted to go in, we created extra columns that we believed could give us some insight into the relationship between the recipe and its contents. The added columns in particular that were most helpful were "Calories": this column extracted the number of calories from the nutrition information columns, "Average Rating": this column helped us find the average rating per recipe as given by people who have made them or (the user_ID). Also, we extracted "total fat", "sugar", "sodium", "protein", "saturated fat", "carbs" from the "nutrition" column, allowing us to access each individual element of nutrition. We also created a column that is True for number of ingredients over 7 for a recipe, as we were interested in that concept for our bivariate analysis. 
+
+Below are the columns of our cleaned df:
 
 ## Cleaned Data Frame
 
@@ -46,6 +58,9 @@ For our bivariate analysis, we explored the relationship between the proportion 
 ></iframe>
 
 ## Interesting Aggregates
+
+We wanted to further understand rhe relationship between number of ingredients and calories. The pivot table below shows the mean, sum, minimum, and maximum calories of recipes grouped by the number of ingredients. We see a very general increase in mean calories as the number of ingredients rises, but it is important to note that the pivot table also showcases that a few simpler recipes with fewer ingredients tend to have higher mean calorie values, suggesting that high-calorie ingredients are often used in simpler recipes. 
+
 
 |   n_ingredients |   ('mean', 'calories') |   ('sum', 'calories') |   ('min', 'calories') |   ('max', 'calories') |
 |----------------:|-----------------------:|----------------------:|----------------------:|----------------------:|

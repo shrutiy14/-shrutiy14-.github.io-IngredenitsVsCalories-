@@ -204,6 +204,23 @@ Our baseline model had an RMSE of about 588.5. Here are some physical statistics
 
 # Final Model
 
+As our RMSE for our baseline model was fairly large, we wanted to improve this considerably in our final model. 
+
+## Adding Features
+
+1. Ingredient encoding by creating binary features of specific ingredients (known to be high-calorie): butter, sugar, oil, cheese, cream. 
+2. Cuisine type by creating binary features to identify whether the cuisine is Mexican. We tried many different variations of identifying cuisines, but identifying whether a recipe was Mexican or not proved to have the better results.
+3. We included total fat, sugar, sodium, protein, saturated fat, and carbs features extracted from the original "nutrition" column, all features that can indirectly affect the calorie content of a recipe. 
+4. Of course, we included the numerical features from our baseline as well, n_steps and n_ingredients.
+
+## Modeling Algorithm
+
+We ended up choosing the Lasso Regression model, which is a form of regularization for linear models. Regularization helps address the mistakes caused when we tend to overfit on the training data. Measuring the level of regularization strength, alpha, was the hyperparameter we chose to tune so we could avoid the issue of overfitting our training data!
+
+For finding the best hyperparameter for alpha, out of 'lasso__alpha': [0.001, 0.01, 0.1, 1, 10], we performed Grid Search Cross Validation with 5 folds. The best hyperparamater proved to be 1. 
+
+The final model's RMSE was 37.7. Since this was a clear increase from my baseline model, the final model considerably improved predicting calories than the baseline.
+
 # Fairness Analysis
 
 Our fairness analysis consisted of:

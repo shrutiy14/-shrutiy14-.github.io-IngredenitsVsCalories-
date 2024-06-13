@@ -172,9 +172,35 @@ The simulation we used was a permutation test and this was because we wanted to 
 
 # Framing a Prediction Problem
 
-Our goal for our prediction problem was to utilize the columns in the data frame to be able to predict the number of calories an ingredient would have given the other information(the presence of high-calorie ingredients, cuisine, other nutrition information, etc.). We chose to build a regression model with there response variable being the number of calories. We chose this response variable as it is necessary information  that most people tend to take into consideration when choosing a recipe. Our metric for evaluating our model was the RMSE because of the error magniitude sensitivity. RMSE punishes larger deviations to the true calorie at disproportionaltely larger rate. This is good as the aim for our prediction model is to get as accurate of a prediction as possible especially when tracking nutrients and macros of meals. Further RMSE, has an easy interpretability allows us to compare the magnitude of the error in the same units as the predicted variables, so if our RMSE is 50, our predictions for calories are off by an average of 50 calories. 
+Our goal for our prediction problem was to utilize the columns in the data frame to be able to predict the number of calories an ingredient would have given the other information(the presence of high-calorie ingredients, cuisine, other nutrition information, etc.), which is a REGRESSION problem because we are predicting a numerical outcome. 
+
+We chose to build a regression model with the response variable being the number of calories. We chose this response variable as it is necessary information that most people tend to take into consideration when choosing a recipe. The information known at the "time of prediction" are all the columns available to us in the cleaned dataset, except the calories column which we are trying to predict.
+
+Our metric for evaluating our model was the RMSE because of the error magniitude sensitivity. RMSE punishes larger deviations to the true calorie at disproportionaltely larger rate. This is good as the aim for our prediction model is to get as accurate of a prediction as possible especially when tracking nutrients and macros of meals. Further RMSE, has an easy interpretability allows us to compare the magnitude of the error in the same units as the predicted variables, so if our RMSE is 50, our predictions for calories are off by an average of 50 calories. 
 
 # Baseline Model
+
+We utilized a linear regression model utilizing the n_ingredients and n_steps features in our recipes_ratings_df, both quantitiative. We decided to go with Linear Regression for our baseline because it is simple, but effective to begin the process of model building for this regression problem. We split our dataframe into training and testing sets, utilizing a 80-20 split, because we want our model have the foundation of our training data without overfitting to the training data.
+
+Our baseline model had an RMSE of about 588.5. Here are some physical statistics, comparing 5 indexes from the predicted calories (y_pred) and true calories (y_test).
+
+
+|        |   predicted_cals |
+|-------:|-----------------:|
+|  44111 |          383.901 |
+| 107113 |          393.064 |
+|  46961 |          450.821 |
+| 130647 |          367.583 |
+| 134708 |          431.569 |
+
+|        |   true_cals |
+|-------:|------------:|
+|  44111 |       306.9 |
+| 107113 |        97.7 |
+|  46961 |       643.5 |
+| 130647 |       275.1 |
+| 134708 |       394.9 |
+
 
 # Final Model
 

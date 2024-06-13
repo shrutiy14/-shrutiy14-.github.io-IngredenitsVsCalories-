@@ -217,7 +217,7 @@ As our RMSE for our baseline model was fairly large, we wanted to improve this c
 
 We ended up choosing the Lasso Regression model, which is a form of regularization for linear models. Regularization helps address the mistakes caused when we tend to overfit on the training data. Measuring the level of regularization strength, alpha, was the hyperparameter we chose to tune so we could avoid the issue of overfitting our training data!
 
-For finding the best hyperparameter for alpha, out of 'lasso__alpha': [0.001, 0.01, 0.1, 1, 10], we performed Grid Search Cross Validation with 5 folds. The best hyperparamater proved to be 1. 
+For finding the best hyperparameter for alpha, out of 'lasso__alpha': [0.001, 0.01, 0.1, 1, 10], we performed Grid Search Cross Validation with 5 folds. The best hyperparamater proved to be 0.1. 
 
 The final model's RMSE was 37.7. Since this was a clear increase from my baseline model, the final model considerably improved predicting calories than the baseline.
 
@@ -231,5 +231,6 @@ Alternative: Our models prediction accuracy was unfair and its prediction accura
 The evaluation metric for models accuracy was the RMSE.
 
 Our p-value threshold was again 0.05 for alpha. 
+
 Our test statistic was difference in RMSE and we chose this because it would be easiest to directly compare how the model performed with more ingredients versus with less ingredients. It was a more straightforward comparison in prediction accuracy and we could draw a more concrete conclusion if we were able to see how well the model perfomed across both groups.
-As a final result, our observed difference between the group was about 40 calories and the p-value was 0.31, which was above the threshold of 0.05 and therefore we can fail to reject the null hypothesis, indicating that our model is pretty fair and draws constant conclusions across both groups no matter if recipes are categorized as high ingredient or low ingredient recipes. ”
+As a final result, our observed difference between the group was about 21 calories and the p-value was 0.71, which was above the threshold of 0.05 and therefore we can fail to reject the null hypothesis, indicating that our model is pretty fair and draws constant conclusions across both groups no matter if recipes are categorized as high ingredient or low ingredient recipes. ”
